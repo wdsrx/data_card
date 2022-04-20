@@ -7,14 +7,14 @@ function init() {
   var selector = d3.select("#selDataset");
   // Read data from samples.json and store it into argument 'data'
   d3.json("data/warehouse.json").then((data) => {
-    console.log(data);
+    // console.log(data);
     // Assing names from the data.names
 
-    console.log(Object.keys(data));
+    // console.log(Object.keys(data));
 
     var sampleNames = Object.keys(data);
     var warehouseName = sampleNames.filter(number => number > 0)
-    console.log(warehouseName)
+    // console.log(warehouseName)
 
     // For each element, a dropdown menu 'option' is appended
     // The text and value is the id (sample)
@@ -29,63 +29,127 @@ function init() {
 
 
 })}
-
 init();
 
 
 
-var tbody = d3.select("tbody");
-
-function fillTable(warehouse) {
-  d3.json("data/waves.json").then((data) => {
-    console.log(data);
+// var tbody = d3.select("tbody");
+// function fillTable(warehouse) {
+//   d3.json("data/waves.json").then((data) => {
+//     // console.log(data);
       
-    tbody.html("");
+//     tbody.html("");
+
+//     [data].forEach((dataRow) => {
+//       //console.log(Object.keys(dataRow.id).length);
+//       //console.log(Object.values(dataRow.Warehouse)[1]);
+      
+//       for (var i = 0; i < Object.keys(dataRow.id).length; i++) {
+//         if (Object.values(dataRow.Warehouse)[i] == warehouse) {
+//           let row = tbody.append("tr");
+//           Object.values(dataRow).forEach((val) => {
+//             let cell = row.append("td");
+//             cell.text(val[i]);
+//           });
+//         }
+//       }
+//     });
+//   });  
+// };
+// fillTable(10);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+var tbody_outbound = d3.select("#table-outbound");
+function fillDataCard(warehouse) {
+  d3.json("data/card.json").then((data) => {
+    console.log(data);
+    
+    tbody_outbound.html("");
 
     [data].forEach((dataRow) => {
-      //console.log(Object.keys(dataRow.id).length);
-      //console.log(Object.values(dataRow.Warehouse)[1]);
+      // console.log(Object.keys(dataRow).length);
+      // console.log(Object.keys(dataRow));
+      // console.log(Object.keys(dataRow)[0]);
+
+      // console.log(Object.values(dataRow)[0]);
+      // console.log(Object.values(dataRow)[0]['10']);
+      // console.log(Object.values(dataRow));
+
+      // console.log(data['Batch Move']);
+      // console.log(data['Batch Move']['10']);
+
       
-      for (var i = 0; i < Object.keys(dataRow.id).length; i++) {
-        if (Object.values(dataRow.Warehouse)[i] == warehouse) {
-          let row = tbody.append("tr");
-          Object.values(dataRow).forEach((val) => {
-            let cell = row.append("td");
-            cell.text(val[i]);
-          });
-        }
-      }
+      let row = tbody_outbound.append("tr");
+      let cell = row.append("th");
+      cell.text('Total Open (Created) Orders');
+
+      // row = tbody_outbound.append("tr");
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+
+
+
+      row = tbody_outbound.append("tr");
+      cell = row.append("th");
+      cell.text('Total New (Created) Orders');
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+
+
+      row = tbody_outbound.append("tr");
+      cell = row.append("th");
+      cell.text('Open Aged Orders > 24 Hours');
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+      cell = row.append("td");
+      cell.text(data['Batch Move'][warehouse]);
+
+
+      // for (var i = 0; i < Object.keys(dataRow.id).length; i++) {
+      //   if (Object.values(dataRow.Warehouse)[i] == warehouse) {
+      //     let row = tbody_outbound.append("tr");
+      //     Object.values(dataRow).forEach((val) => {
+      //       let cell = row.append("td");
+      //       cell.text(val[i]);
+      //     });
+      //   }
+      // }
+
+      
     });
   });  
 };
-fillTable(10);
+fillDataCard(10);
 
-// function addCharts(warehouse) {
-//   d3.json("data/warehouse.json").then((data) => {
-//     console.log(data);
-//     var labels = [];
-//     var values = [];
-    
-//     [data].forEach((dataRow) => {
-//       labels = Object.values(dataRow.Status);
-//       values = Object.values(dataRow[warehouse]);
-//       console.log(labels);
-//       console.log(values);
 
-//       var data = [{
-//         labels: labels,
-//         values : values,
-//         type: "pie",
-//       }];
-//       var layout = {
-//         title: "Orders Status"
-//       };
 
-//       Plotly.newPlot("plot", data, layout);
-//     })
-//   })
-// }
-// addCharts(10);
+
+
 
 d3.selectAll("#selDataset").on("change", updateData);
 
@@ -97,8 +161,9 @@ function updateData() {
   // Assign the dropdown menu option to a variable
   var selectedOption = dropdownMenu.property("value");
 
-  fillTable(selectedOption);
-  // addCharts(selectedOption);
+  //fillTable(selectedOption);
+  fillDataCard(selectedOption);
+  
 
   // console.log(dropdownMenuID);
   // console.log(selectedOption);
