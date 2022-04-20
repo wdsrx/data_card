@@ -2,32 +2,24 @@
 // python -m http.server
 // http://127.0.0.1:8000
 
+
 function init() {
   // Select the dropdown menu with id 'selDataset'
   var selector = d3.select("#selDataset");
   // Read data from samples.json and store it into argument 'data'
-  d3.json("data/warehouse.json").then((data) => {
-    // console.log(data);
-    // Assing names from the data.names
+  d3.json("data/card.json").then((data) => {
+    console.log(data);
+    console.log(Object.keys(data));
 
-    // console.log(Object.keys(data));
+    var warehouses = Object.keys(data['Picking']);
+    console.log(warehouses)
 
-    var sampleNames = Object.keys(data);
-    var warehouseName = sampleNames.filter(number => number > 0)
-    // console.log(warehouseName)
-
-    // For each element, a dropdown menu 'option' is appended
-    // The text and value is the id (sample)
-
-
-    warehouseName.forEach((sample) => {
+    warehouses.forEach((sample) => {
       selector
         .append("option")
         .text('Warehouse ' + sample)
         .property("value", sample);
     });
-
-
 })}
 init();
 
@@ -65,7 +57,7 @@ init();
 var tbody_outbound = d3.select("#table-outbound");
 function fillDataCard(warehouse) {
   d3.json("data/card.json").then((data) => {
-    console.log(data);
+    // console.log(data);
     
     tbody_outbound.html("");
 
@@ -88,15 +80,15 @@ function fillDataCard(warehouse) {
 
       // row = tbody_outbound.append("tr");
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Picking'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Picking'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Picking'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Picking'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Picking'][warehouse]);
 
 
 
@@ -104,30 +96,30 @@ function fillDataCard(warehouse) {
       cell = row.append("th");
       cell.text('Total New (Created) Orders');
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['LicensePlateMove'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['LicensePlateMove'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['LicensePlateMove'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['LicensePlateMove'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['LicensePlateMove'][warehouse]);
 
 
       row = tbody_outbound.append("tr");
       cell = row.append("th");
       cell.text('Open Aged Orders > 24 Hours');
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Receiving'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Receiving'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Receiving'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Receiving'][warehouse]);
       cell = row.append("td");
-      cell.text(data['Batch Move'][warehouse]);
+      cell.text(data['Receiving'][warehouse]);
 
 
       // for (var i = 0; i < Object.keys(dataRow.id).length; i++) {
