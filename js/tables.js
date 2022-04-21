@@ -58,9 +58,9 @@ init();
 
 
 var tbody_outbound = d3.select("#table-outbound");
-function fillDataCard(warehouse) {
+function fillDataCard() {
   d3.json("data/card.json").then((data) => {
-    // console.log(data);
+    console.log(data);
     
     tbody_outbound.html("");
 
@@ -77,52 +77,55 @@ function fillDataCard(warehouse) {
       // console.log(data['Batch Move']['10']);
 
       
-      let row = tbody_outbound.append("tr");
-      let cell = row.append("th");
-      cell.text('Total Open (Created) Orders');
+
+
+
+      // let row = tbody_outbound.append("tr");
+      // let cell = row.append("th");
+      // cell.text('Total Open (Created) Orders');
+
+      // // row = tbody_outbound.append("tr");
+      // cell = row.append("td");
+      // cell.text(data['Picking'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Picking'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Picking'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Picking'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Picking'][warehouse]);
+
+
 
       // row = tbody_outbound.append("tr");
-      cell = row.append("td");
-      cell.text(data['Picking'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Picking'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Picking'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Picking'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Picking'][warehouse]);
+      // cell = row.append("th");
+      // cell.text('Total New (Created) Orders');
+      // cell = row.append("td");
+      // cell.text(data['LicensePlateMove'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['LicensePlateMove'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['LicensePlateMove'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['LicensePlateMove'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['LicensePlateMove'][warehouse]);
 
 
-
-      row = tbody_outbound.append("tr");
-      cell = row.append("th");
-      cell.text('Total New (Created) Orders');
-      cell = row.append("td");
-      cell.text(data['LicensePlateMove'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['LicensePlateMove'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['LicensePlateMove'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['LicensePlateMove'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['LicensePlateMove'][warehouse]);
-
-
-      row = tbody_outbound.append("tr");
-      cell = row.append("th");
-      cell.text('Open Aged Orders > 24 Hours');
-      cell = row.append("td");
-      cell.text(data['Receiving'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Receiving'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Receiving'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Receiving'][warehouse]);
-      cell = row.append("td");
-      cell.text(data['Receiving'][warehouse]);
+      // row = tbody_outbound.append("tr");
+      // cell = row.append("th");
+      // cell.text('Open Aged Orders > 24 Hours');
+      // cell = row.append("td");
+      // cell.text(data['Receiving'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Receiving'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Receiving'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Receiving'][warehouse]);
+      // cell = row.append("td");
+      // cell.text(data['Receiving'][warehouse]);
 
 
       // for (var i = 0; i < Object.keys(dataRow.id).length; i++) {
@@ -139,7 +142,7 @@ function fillDataCard(warehouse) {
     });
   });  
 };
-fillDataCard(10);
+fillDataCard();
 
 
 
@@ -157,7 +160,7 @@ function updateData() {
   var selectedOption = dropdownMenu.property("value");
 
   //fillTable(selectedOption);
-  fillDataCard(selectedOption);
+  //fillDataCard(selectedOption);
   
 
   // console.log(dropdownMenuID);
