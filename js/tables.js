@@ -8,16 +8,19 @@ function init() {
   var selector = d3.select("#selDataset");
   // Read data from samples.json and store it into argument 'data'
   d3.json("data/card.json").then((data) => {
-    console.log(data);
-    console.log(Object.keys(data));
+    // console.log(data);
+    // console.log(Object.keys(data));
 
     var warehouses = Object.keys(data['Picking']);
     console.log(warehouses)
 
     warehouses.forEach((sample) => {
+      console.log(sample.split(",")[0].substring(2,))
+      console.log('------------')
+
       selector
         .append("option")
-        .text('Warehouse ' + sample)
+        .text('Warehouse ' + sample.split(",")[0].substring(1,))
         .property("value", sample);
     });
 })}
