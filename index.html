@@ -15,34 +15,6 @@
 
 <body>
   
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Home</a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Link 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-secondary" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 text-center">
@@ -50,47 +22,27 @@
       </div>
     </div>
 
-    
-
     <div class="row">
       <div class="col-sm-4 col-md-4">
         <div class="well">
           <h5>Select Warehouse</h5>        
           <select id="selDataset">
+            <option value="10">Warehouse 10</option>
+            <option value="12">Warehouse 12</option>
+            <option value="15">Warehouse 15</option>
+            <option value="16">Warehouse 16</option>
+            <option value="18">Warehouse 18</option>
+            <option value="19">Warehouse 19</option>
+            <option value="20">Warehouse 20</option>
+            <option value="21">Warehouse 21</option>
+            <option value="22">Warehouse 22</option>
             
           </select>   
         </div>
       </div>
-      
     </div>
 
-
-
-
-
-
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <table class="table table-striped">
-          <thead id="table-data">
-              <tr>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-              </tr>
-            </thead>
-          <tbody> </tbody>
-        </table>
-      </div>
-    </div>
-
-    
-
-    
+    <br>
 
     <table class="table table-striped">
       <thead class="thead-light">
@@ -104,254 +56,14 @@
         </tr>
       </thead>
       <tbody  id="table-outbound">
-        <tr>
-          <td>Total Open (Created) Orders</td>
-          <td>3</td>
-          <td>2</td>
-          <td>1</td>
-          <td>4</td>
-          <td>22</td>
-        </tr>
-        <tr>
-          <td>Total New (Created) Orders</td>
-          <td>3</td>
-          <td>2</td>
-          <td>1</td>
-          <td>4</td>
-          <td>22</td>
-        </tr>
-        <tr>
-          <td>Open Aged Orders > 24 Hours</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Aged Orders > 48 Hours</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Aged Orders > 168 Hours</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Orders Processed (Waved)</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Orders Picked (Executing)</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Closed Orders (Completed)</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Orders Carryover</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Orders Shipped Same Dat</td>
-          <td>98 %</td>
-          <td>94 %</td>
-          <td>95 %</td>
-          <td>94 %</td>
-          <td>92 %</td>
-        </tr>
+
       </tbody>
     </table>
-    
-    <table class="table table-striped">
-      <thead class="thead-light" id="table-inbound">
-        <tr class = "table-secondary">
-          <th scope="col" style = "font-weight: bold">INBOUND</th>
-          <th scope="col" style = "font-weight: bold">Monday</th>
-          <th scope="col" style = "font-weight: bold">Tuesday</th>
-          <th scope="col" style = "font-weight: bold">Wednesday</th>
-          <th scope="col" style = "font-weight: bold">Thursday</th>
-          <th scope="col" style = "font-weight: bold">Friday</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Total Open Created Orders</td>
-          <td>3</td>
-          <td>2</td>
-          <td>1</td>
-          <td>4</td>
-          <td>22</td>
-        </tr>
-        <tr>
-          <td>Total Pallets Pending Putaway</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Units Over</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Units Short</dh>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Total Units Damaged</dh>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
-
-    <table class="table table-striped">
-      <thead class="thead-light" id="table-inventory">
-        <tr class = "table-secondary">
-          <th scope="col" style = "font-weight: bold">INVENTORY</th>
-          <th scope="col" style = "font-weight: bold">Monday</th>
-          <th scope="col" style = "font-weight: bold">Tuesday</th>
-          <th scope="col" style = "font-weight: bold">Wednesday</th>
-          <th scope="col" style = "font-weight: bold">Thursday</th>
-          <th scope="col" style = "font-weight: bold">Friday</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Inventory Counts</td>
-          <td>3</td>
-          <td>2</td>
-          <td>1</td>
-          <td>4</td>
-          <td>22</td>
-        </tr>
-        <tr>
-          <td>Inventory Discrepancies</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Inventory Adjustments</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
-    <table class="table table-striped">
-      <thead class="thead-light" id="table-capacity">
-        <tr class = "table-secondary">
-          <th scope="col" style = "font-weight: bold">CAPACITY</th>
-          <th scope="col" style = "font-weight: bold">Monday</th>
-          <th scope="col" style = "font-weight: bold">Tuesday</th>
-          <th scope="col" style = "font-weight: bold">Wednesday</th>
-          <th scope="col" style = "font-weight: bold">Thursday</th>
-          <th scope="col" style = "font-weight: bold">Friday</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Rack Locations (Pallets)</td>
-          <td>3</td>
-          <td>2</td>
-          <td>1</td>
-          <td>4</td>
-          <td>22</td>
-        </tr>
-        <tr>
-          <td>Aisle Locations (Pallets)</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Rack Locations (Bins)</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Cage Locations</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Vault Locations</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>2</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
-
-
-    
-
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="js/tables.js"></script>
+  <script src="js/table.js"></script>
 
 </body>
 
