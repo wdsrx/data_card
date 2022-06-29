@@ -4,10 +4,10 @@
     padding-bottom: 0.5%;
 }
 
-td {
+th {
     text-align: left;
-  }
-
-th{
     font-weight: normal;
-}
+  }
+td {
+    text-align: center;
+  }
